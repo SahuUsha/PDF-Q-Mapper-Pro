@@ -79,7 +79,7 @@ export const mapQuestionsWithTextbook = async (
   optionalInstructions?: string,
   useLatex: boolean = false
 ): Promise<QuestionMapping[]> => {
-  const modelName = 'gemini-3-flash-preview';
+  const modelName = 'gemini-3.1-flash-lite-preview';
 
   // Pre-sanitize the textbook reference (always sanitize reference to avoid confusion)
   const sanitizedTextbookJson = sanitizeString(textbookJson, false);
