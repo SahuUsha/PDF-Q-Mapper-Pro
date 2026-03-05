@@ -1,0 +1,7 @@
+{
+  "name": "Remix: Physics Textbook Q-Mapper",
+  "description": "An AI-powered tool to map textbook questions to structured JSON format for educational platforms, supporting chapter, topic, and subtopic indexing.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
