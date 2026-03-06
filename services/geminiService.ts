@@ -2,7 +2,11 @@
 import { GoogleGenAI, Type } from "@google/genai";
 import { QuestionMapping, Difficulty } from "../types";
 
-const ai = new GoogleGenAI({ apiKey: "AIzaSyATGrs5R3-1tCcAfsv_jZ_nhtN6pwdhk1A" });
+
+const ai = new GoogleGenAI({
+  apiKey: import.meta.env.VITE_GOOGLE_API_KEY
+});
+
 
 /**
  * Sanitizes input text by removing literal \n, backslashes, and dollar signs.
@@ -79,7 +83,7 @@ export const mapQuestionsWithTextbook = async (
   optionalInstructions?: string,
   useLatex: boolean = false
 ): Promise<QuestionMapping[]> => {
-  const modelName = 'gemini-3.1-flash-lite-preview';
+  const modelName = "gemini-2.5-flash";
 
   // Pre-sanitize the textbook reference (always sanitize reference to avoid confusion)
   const sanitizedTextbookJson = sanitizeString(textbookJson, false);
